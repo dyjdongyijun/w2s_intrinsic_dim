@@ -11,7 +11,7 @@ cd /scratch/$USER
 module avail python
 module avail conda
 module load python/intel/3.8.6
-module load anaconda3/2020.07
+module load anaconda3/2024.02
 conda --version
 
 
@@ -23,25 +23,15 @@ git pull
 # environment setup
 # conda init bash
 cd /scratch/$USER/envs
-conda create --prefix /scratch/$USER/envs/ng python=3.9
-conda activate /scratch/$USER/envs/ng
+conda create --prefix /scratch/$USER/envs/main python=3.11 -y
+conda activate /scratch/$USER/envs/main
 # conda install --file conda_pkgs.txt
 # pip install -r pip_pkgs.txt
 
 
 # manually install packages
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install wandb
-pip install torch torchvision torchaudio
-pip install jax
-pip install jaxlib
-pip install git+https://github.com/deepmind/dm-haiku
-pip install jaxopt
-pip install optax
-pip install tqdm
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install numpy scipy matplotlib pandas wandb tqdm
 pip cache purge
 
 
