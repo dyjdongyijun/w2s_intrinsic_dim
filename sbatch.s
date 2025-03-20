@@ -8,12 +8,10 @@
 #SBATCH --output=run1_%j.out
 
 module purge
-module load python/intel/3.8.6
-module load anaconda3/2020.07
-activate /scratch/$USER/envs/w2s
+activate /scratch/$USER/envs/main
 
-ENV=/scratch/$USER/envs/w2s/bin
-RUN=/scratch/$USER/neural_galerkin/Random_Neural_Galerkin
+ENV=/scratch/$USER/envs/main/bin
+RUN=/scratch/$USER/w2s_intrinsic_dim
 cd $RUN
 
 TAG=run1
