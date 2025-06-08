@@ -175,4 +175,3 @@ cython_debug/
 
 # user-specific stuff
 linear_probing/precomputed
-*.DS_Store
